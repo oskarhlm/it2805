@@ -1,0 +1,3 @@
+[submodule "poorbutpass"]
+	path = poorbutpass
+	url = git@github.com:haralwit/poorbutpass.git
