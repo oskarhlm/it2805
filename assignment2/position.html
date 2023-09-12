@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IT2805</title>
+
+    <style type="text/css">
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+      /* Part 1 */
+
+      .header {
+        font-family: sans-serif;
+        padding-top: 30px;
+        margin-bottom: 40px;
+        text-align: center;
+      }
+
+      .box {
+        border-width: 2px;
+        border-color: #0060a3;
+        border-style: solid;
+        width: 70vw;
+        height: 400px;
+        margin: auto;
+        position: relative;
+      }
+
+      .one {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 100px;
+        height: 100px;
+        border-width: 2px;
+        border-color: #faa21b;
+        border-style: solid;
+      }
+
+      .two {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        width: 100px;
+        height: 100px;
+        border-width: 2px;
+        border-color: #faa21b;
+        border-style: solid;
+        background-color: #fff;
+      }
+
+      .three {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border-width: 2px;
+        border-color: #faa21b;
+        border-style: solid;
+        background-color: #fff;
+        bottom: 50%;
+        right: 0;
+        transform: translate(50%);
+      }
+
+      .five {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        font-size: 35px;
+        font-family: sans-serif;
+      }
+
+      .four {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50px;
+        height: 50px;
+        border-width: 2px;
+        border-color: #faa21b;
+        border-style: solid;
+      }
+
+      /* Part 2 */
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Assignment 3: position</h1>
+    </div>
+
+    <div class="box">
+      <div class="one"></div>
+      <div class="two"></div>
+      <div class="three">
+        <div class="four"></div>
+      </div>
+      <div class="five">CSS is awesome</div>
+    </div>
+  </body>
+</html>

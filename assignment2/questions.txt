@@ -1,0 +1,25 @@
+Q1:
+You would use id's when you want to specify a style for an unique element on the page,
+or when you want to get a specific element on the page programmatically 
+(using Element.getElementById(id)). For example, if you have an id on a section and a button
+to toggle the visibility of that section, you would get the element by it's id using 
+getElementById and change it's visibility attribute. 
+
+Classes are meant for reuse. If you have a css class for a section header, you only want to write the 
+css for it once, and then reuse it on all the section headers on your page. Here, classes 
+are the way to go. 
+
+
+
+Q2: 
+R - Red
+G - Green
+B - Blue
+A - Alpha
+
+You can create all colors that can be made from the combinations of red, green, and blue, and 
+you can use the alpha channel to make it transparent. 
+
+
+Q3: 
+"article p" or "article > p"
