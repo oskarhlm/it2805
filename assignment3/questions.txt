@@ -1,0 +1,25 @@
+Q1: 
+position: absolute 
+The element with this property will adjust its position with respect to its parent. 
+It is removed from the flow, and you can position it whereever you like using the
+top, bottom, left, and right properties. 
+
+position: fixed 
+This will position the element relative to the viewport, so that it stays in 
+the same place when you scroll. You can position it the same way you would 
+position an element with absolute position. 
+
+Q2: 
+You would use the `:nth-child` selector together with the selector of the parent element,
+like so: 
+   
+.container :nth-child(3) {
+    ...
+}
+
+Q3: 
+If you visit a site using a device with a 320 x 568 resolution 
+this media query will not take effect, 
+and the styles within it will not affect the elements on the page.
+This is because the media query is only active when the screen with is 
+between 768px and 1024px. 
