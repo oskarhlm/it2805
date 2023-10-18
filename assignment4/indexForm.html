@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tax form</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #c9edf1;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: fit-content;
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 5px;
+      }
+
+      label {
+        display: flex;
+        justify-content: space-between;
+        gap: 5px;
+      }
+
+      label:has(input[type='radio']) {
+        display: inline;
+      }
+
+      label > input {
+        flex-grow: 1;
+      }
+
+      input[type='range'] {
+        flex-grow: 0;
+      }
+
+      input[type='checkbox'] {
+        flex-grow: 0;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <form
+      id="tax-form"
+      action="https://folk.ntnu.no/anderobs/webtek/receive_form.php"
+      method="post"
+    >
+      <h1>Tax form <span id="tax-payer-name"></span></h1>
+      <label
+        >Name: <input required id="name-input" type="text" name="name"
+      /></label>
+
+      <fieldset>
+        <legend>Gender</legend>
+        <label>
+          <input required type="radio" name="gender" value="male" /> Male</label
+        >
+        <label>
+          <input required type="radio" name="gender" value="female" />
+          Female</label
+        >
+      </fieldset>
+
+      <label>E-mail: <input required type="email" name="email" /></label>
+
+      <label
+        >Birthdate: <input id="birthdate" type="date" name="birthdate"
+      /></label>
+
+      <label>Hero name: <input required type="text" name="hero" /></label>
+
+      <label
+        >Do you wear spandex? <input type="checkbox" name="spandex"
+      /></label>
+
+      <label
+        >Strength: <input type="range" name="strength" min="1" max="10"
+      /></label>
+
+      <label>Speed: <input type="range" name="speed" min="1" max="10" /></label>
+
+      <label
+        >Intelligence: <input type="range" name="intelligence" min="1" max="10"
+      /></label>
+
+      <label>Income: <input required type="number" name="income" /></label>
+
+      <label>Wealth: <input required type="number" name="wealth" /></label>
+
+      <button type="submit">Submit tax form</button>
+    </form>
+
+    <script>
+      const form = document.getElementById('tax-form');
+      const birthdateInput = document.getElementById('birthdate');
+      const nameInput = document.getElementById('name-input');
+
+      function isDateBefore1988(date) {
+        return date.getFullYear() < 1988;
+      }
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const inputDate = new Date(birthdateInput.value);
+
+        if (!isDateBefore1988(inputDate)) {
+          birthdateInput.setCustomValidity('Needs to be before 1988');
+          birthdateInput.reportValidity();
+          return;
+        }
+
+        form.submit();
+      });
+
+      birthdateInput.addEventListener('change', () => {
+        birthdateInput.setCustomValidity('');
+      });
+
+      nameInput.addEventListener('input', () => {
+        const h1Name = document.getElementById('tax-payer-name');
+
+        if (nameInput.value.length === 0) {
+          h1Name.innerText = '';
+          return;
+        }
+
+        h1Name.innerText = 'for ' + nameInput.value;
+      });
+    </script>
+  </body>
+</html>
