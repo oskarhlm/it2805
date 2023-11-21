@@ -15,6 +15,11 @@
   - Allows for data exchange between computers
   - Tolerates unreliable sub-networks
   - Guarantees proper data transmission, since the phisical network can't
+  - The TCP/IP model is a four-layer model that divides network communications into four distinct categories or layers. The model is often referred to as the TCP/IP stack. The four important layers are the application layer, the transport layer, the network layer, and the link layer.
+    - The Application Layer: The application layer is closest to the end user. And this is the layer that users interact with directly, including protocols such as HTTP, FTP, and SSH. This layer is responsible for providing applications with access to the network.
+    - The Transport Layer: The transport layer ensures that data is delivered reliably and efficiently from one point to another. This layer handles data transmission between hosts, including protocols like TCP and UDP.
+    - The Internet Layer: The network layer is responsible for routing data through the web. This layer delivers data packets from one host to another, including the IP protocol.
+    - The Link Layer: The link layer provides reliable data links between the two nodes — for example,protocols like ethernet and Wi-Fi.
   - Layers
     - Application (HTTP, telnet, ftp, email, VoIP)
       - Ability to access services of other layers
@@ -259,9 +264,25 @@
     - Creates new virtual elements
     - **::after**: Allows inserting content onto a page from CSS, instead of HTML. While the end result is not actually in the DOM, it appears on the page as if it is. This content loads after HTML elements.
     - **::before**: Allows inserting content onto a page from CSS, instead of HTML. While the end result is not actually in the DOM, it appears on the page as if it is. This content loads before HTML elements.
+    - ::after
+    - ::backdrop
+    - ::before
+    - ::cue
+    - ::cue-region
+    - ::first-letter
+    - ::first-line
+    - ::file-selector-button
+    - ::grammar-error Experimental
+    - ::marker
+    - ::part()
+    - ::placeholder
+    - ::selection
+    - ::slotted()
+    - ::spelling-error Experimental
+    - ::target-text
 
 - Specificity Value
-  - Style attribute > ID > Class, pseudo-class, attribute > Elements
+  - Style attribute > ID > Class, pseudo-class, attribute > Elements, pseudo-elements
 
 ## Lecture 4 - CSS properties
 
@@ -868,6 +889,28 @@
     const Peder = new Person('Peder', 12);
     ```
 
+- Creating Date Objects
+  - new Date(): Creates a new date object with the current date and time. Returns a Date object.
+  - new Date(year, month, day, hours, minutes, seconds, milliseconds): Creates a date object with specified date and time. Returns a Date object.
+- Getting Date and Time
+  - getDate(): Returns the day of the month as a number (1-31).
+  - getDay(): Returns the day of the week as a number (0-6).
+  - getMonth(): Returns the month as a number (0-11).
+  - getFullYear(): Returns the year as a number.
+  - getHours(), getMinutes(), getSeconds(), getMilliseconds(): Return the respective time components as numbers.
+- Setting Date and Time
+  - setDate(), setMonth(), setFullYear(): Set the day, month, and year of a date object. Return the new timestamp as a number.
+  - setHours(), setMinutes(), setSeconds(), setMilliseconds(): Set the respective time components. Return the new timestamp as a number.
+- Date Comparison
+  - Dates can be compared using standard comparison operators (e.g., <, >, ==).
+- Formatting Dates
+  - toString(), toLocaleString(): Convert a date object to a string. Return a formatted string.
+- UTC Methods
+  - Methods like getUTCDate(), getUTCHours(), etc., provide date and time in UTC. Return the respective components as numbers.
+- Timestamps
+  - Date.now(): Returns the current timestamp as a number.
+  - getTime(): Returns the timestamp of a date object as a number.
+
 ## Lecture 10 - DOM introduction
 
 - Document Object Model (DOM)
@@ -885,6 +928,11 @@ el.addEventListener('keydown', (e) => {
 });
 el.addEventListener('change', () => {});
 ```
+
+- Event propagation:
+  Propagation refers to how events travel through the Document Object Model (DOM) tree. The DOM tree is the structure which contains parent/child/sibling elements in relation to each other. You can think of propagation as electricity running through a wire, until it reaches its destination. The event needs to pass through every node on the DOM until it reaches the end, or if it is forcibly stopped.
+- Event bubbling:
+  Bubbling and Capturing are the two phases of propagation. In their simplest definitions, bubbling travels from the target to the root, and capturing travels from the root to the target. However, that doesn’t make much sense without first defining what a target and a root is. The target is the DOM node on which you click, or trigger with any other event. For example, a button with a click event would be the event target. The root is the highest-level parent of the target. This is usually the document, which is a (possibly distant) parent of your target element.
 
 - Event types
   - Click: Triggered when an element is clicked.
