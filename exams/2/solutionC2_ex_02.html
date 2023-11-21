@@ -1,0 +1,66 @@
+<html>
+
+
+
+<head>
+
+    <style>
+        div{
+            background-color: greenyellow;
+            text-align: center;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    
+
+    <div id = "div1">
+        Mouse <br>
+        Events
+    </div>
+    
+
+    <br>
+    Focus Events: <br>
+    <input type="text" id = "text1" value="Write text here">
+
+
+
+
+    <script>
+        let div1 = document.getElementById('div1')
+        let text1 = document.getElementById('text1')
+
+        div1.addEventListener('mouseover',addBorder)
+        div1.addEventListener('mouseout',changeColor)
+        text1.addEventListener('focus',changeText1)
+        text1.addEventListener('blur',changeText2)
+
+
+
+        function addBorder(){
+            div1.style.border = "10px black solid"
+        }
+
+        
+        function changeColor(){
+            div1.style.backgroundColor = "blue"
+        }
+
+
+        
+        function changeText1(){
+            text1.value = "this had focus"
+        }
+
+        
+        function changeText2(){
+            text1.value = "this has lost focus"
+        }
+    </script>
+    
+</body>
+</html>

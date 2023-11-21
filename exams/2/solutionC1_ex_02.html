@@ -1,0 +1,61 @@
+<html>
+
+<head>
+
+    <style>
+        /* Change color of all children paragraphs to red and make them bold */
+        .divChild > p{
+            color: red;
+            font-weight: bold;
+        }
+
+        /* Change the background color of the first grandchild paragraph to grey */
+        .divGrandChild > p:first-of-type{
+            background-color: yellow;
+        }
+
+        /* Change the font type of the first paragraph after each div bold */
+        div > p:first-of-type{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        /* Add a blue border to the fourth parent paragraph */
+        #divParent > p:nth-of-type(4){
+            border: 2px solid blue;
+        }
+
+        /* Move all the grand-children paragraphs 20 pixels to the right */
+        .divGrandChild  p{
+            position: relative;
+            margin-left: 20px
+        }
+
+
+
+
+
+    </style>
+</head>
+
+
+<body>
+    
+    <div id="divParent">
+        <p>Parent1 </p>
+        <p>Parent2 </p>
+        <div class="divChild">
+          <p>Child1 </p>
+          <p>Child2 </p>
+          <p>Child3 </p>
+          <div class="divGrandchild">
+            <p>Grandchild1 </p>
+            <p>Grandchild2</p>
+          </div>
+          <p>Child4 </p>
+        </div>
+        <p>Parent3</p>
+        <p>Parent4</p>
+        <p>Parent5</p>
+      </div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<html>
+
+<head>
+
+    <style>
+        #res{
+            display: none;
+        }
+
+
+        #error{
+            background-color: red;
+            display: none;
+        }
+    </style>
+
+</head>
+
+    <body>
+
+        First Number: <input type="number" id="a"> <br>
+        Second Number: <input type="number" id="b"> <br>
+        <button>submit</button>
+
+        <div id = 'res'>
+            <p id = 'p1'>(a+b)sq = </p>
+            <p id = 'p2'>(a-b)sq = </p>
+            <p id = 'p3'> asq+bsq = </p>
+            <p id = 'p4'>asq-bsq = </p>
+            <p id = 'p5'>sqrt(asq+bsq) =</p>
+        </div>
+
+        <div id = 'error'>
+            <p>please enter positive numbers only</p>
+        </div>
+        
+
+        <script>
+
+            let res = document.getElementById('res')
+            let error1 = document.getElementById('error')
+            let p1 = document.getElementById('p1')
+            let p2 = document.getElementById('p2')
+            let p3 = document.getElementById('p3')
+            let p4 = document.getElementById('p4')
+            let p5 = document.getElementById('p5')
+
+
+            let a = document.getElementById('a')
+            let b = document.getElementById('b')
+
+            let button1 = document.getElementsByTagName('button')[0]
+            button1.addEventListener('click',calculate)
+
+
+            function calculate(){
+                let x = parseInt(a.value)
+                let y = parseInt(b.value)
+
+
+                if (x < 0 || y < 0){
+                    error1.style.display = 'block'
+                } else {
+
+                    let v1 = (x+y)*(x+y)
+                    let v2 = (x-y)*(x-y)
+                    let v3 = (x*x)+(y*y)
+                    let v4 = (x*x)-(y*y)
+                    let v5 = Math.sqrt((x*x)+(y*y))
+                
+                    p1.innerText += v1
+                    p2.innerText += v2
+                    p3.innerText += v3
+                    p4.innerText += v4
+                    p5.innerText += v5
+
+                    res.style.display = 'block'
+                }
+
+                
+            }
+
+
+
+
+   
+        </script>
+
+    </body>
+
+</html>

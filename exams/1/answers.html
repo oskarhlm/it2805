@@ -1,0 +1,154 @@
+<h2>Section A: Multiple Choice</h2>
+
+<h3>A1</h3>
+title
+
+<h3>A2</h3>
+Graphics Interchange Format
+
+<h3>A3</h3>
+id
+
+<h3>A4</h3>
+Application layer
+
+<h3>A5</h3>
+color
+
+<h3>A6</h3>
+True
+
+<h3>A7</h3>
+False - Static property control how an element is positioned
+
+<h3>A8</h3>
+True - In CSS, text property is used to align the text in a table
+
+<h3>A9</h3>
+True
+
+<h3>A10</h3>
+True
+
+<h3>A11</h3>
+denne er wack
+<pre>
+  _ _ X _ _ 
+  X _ _ _ _ 
+  _ X _ _ _ 
+  _ _ _ _ X 
+  _ _ _ X _ 
+</pre>
+
+<h2>Section B: Long Answers</h2>
+
+<h3>B1</h3>
+<ul>
+  <li>VISIBLE - The element is visible (default value)</li>
+  <li>
+    HIDDEN - The element is hidden but there is white-space where it would have
+    been
+  </li>
+  <li>
+    COLLAPSE - Only for table rows (&lttr&gt), row groups (&lttbody&gt), columns
+    (&ltcol&gt), column groups (&ltcolgroup&gt). This value removes a row or
+    column, but it does not affect the table layout. The space taken up by the
+    row or column will be available for other content. If used on other
+    elements, it renders a "hidden"
+  </li>
+  <li>INITIAL - Set this property to its default value</li>
+  <li>
+    INHERIT - The element inherits the visibility value from its parent element
+  </li>
+</ul>
+
+<h3>B2</h3>
+The z-index property let's us decide what order element should be rendered in.
+An element with a higher z-value is rendered on top of an element with a lower
+z-index, if the two overlap.
+
+<ul>
+  <li>
+    <strong>auto</strong> - Sets the stack order equal to its parents (default)
+  </li>
+  <li>
+    <strong>number</strong> - Sets the stack order of the element. Negative
+    numbers are allowed
+  </li>
+  <li><strong>initial</strong> - Sets this property to its default value</li>
+  <li>
+    <strong>inherit</strong> - Inherits this property from its parent element
+  </li>
+</ul>
+
+<h2>Section C: Coding</h2>
+
+<h3>C1</h3>
+<pre>
+  a:first-child:hover { 
+    color: green; 
+    font-size: 22px; 
+  } 
+  
+  div i:first-of-type { 
+    color: yellow;  
+  }
+
+  a::before {
+    content: url(smiley.gif);
+  }
+
+  a[href$=".php"] {
+    background-color: yellow;
+  }
+
+  a:active {
+    border: 1px solid black;
+  }
+</pre>
+
+<h3>C2</h3>
+<pre>
+  const emailInput = document.querySelector('input')
+
+  emailInput.eventListener('mouseover', () => {
+    emailInput.style.backgroundColor = 'green';
+  })
+
+  emailInput.eventListener('blur', () => {
+    const email = emailInput.value;
+    
+    if (!email.includes('@') || !email.includes('.') ) {
+      return false;
+    }
+
+    const splitMail = email.split('@')
+    if (splitMail[0].length <= 1 || slitMail[1].length <= 1) {
+      return false;
+    }
+
+    const splitMail2 = email.split('.')
+    return splitMail2[1].lenght > 1;
+  })
+
+  emailInput.eventListener('keyup', () => {
+    email.value = email.value.toUpperCase()
+  })
+</pre>
+
+<h2>Section D: Code Understanding</h2>
+
+<h3>D1</h3>
+50
+
+<h3>D2</h3>
+False
+
+<h3>D3</h3>
+function([1, 2, 3]) -> 1 2 3
+
+<h3>D4</h3>
+Strength: poor
+
+<h3>D5</h3>
+Altert saying: "Total Genders: 7"

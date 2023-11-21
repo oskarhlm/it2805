@@ -1,0 +1,107 @@
+<html>
+
+
+
+<head>
+<style>
+    /* you do not need all this style */
+#div2{
+  margin: 20px;
+  padding: 20px;
+  border: 10px solid white;
+  border-radius: 5px;
+  
+}
+
+#div1{
+  margin: 20px;
+  padding: 20px;
+  border: 10px solid white;
+  border-radius: 5px;
+  
+}
+
+button{
+  margin: 20px;
+  padding: 20px;
+  display: block;
+}
+
+body {
+  display: table-cell;
+  background-color: lightblue;
+  vertical-align: middle;
+}
+
+
+p{
+  font-style: oblique;
+  font-size: 24px;
+}
+
+</style>
+
+</head>
+
+<body>
+    
+    <div id = "div2">
+        2
+      
+      <div id = "div1">
+          1
+          <button> Click </button>
+      </div>
+    </div>
+    
+    
+    <p id ="events">
+    </p>
+
+
+
+
+    <script>
+
+
+
+
+
+        window.addEventListener ('click', function (){
+            console.log('window --> event bubbling');
+        },false);
+
+
+        document.addEventListener ('click', function (){
+        console.log('document --> event bubbling');
+        },false);
+
+
+        document.querySelector('#div2').addEventListener(
+        'click', function (){    
+        console.log('div 2 --> event bubbling');
+        },false);
+
+
+        document.querySelector('#div1').addEventListener(
+        'click', function (){
+        console.log('div 1 --> event bubbling');
+        },false);
+
+
+        document.querySelector('button').addEventListener(
+        'click', function (e){
+        console.log('button --> event bubbling');
+        },false);
+
+
+
+        
+
+
+    </script>
+
+</body>
+
+
+</html>

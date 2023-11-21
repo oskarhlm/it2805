@@ -1,0 +1,81 @@
+<html>
+
+
+<body>
+
+    First Name: <input type="text"  id="fname"><br>
+    Last Name: <input type="text"  id="lname"><br>
+    Password Name: <input type="text"  id="pwd"><br>
+    Date of Birth: <input type="date"  id="dob"><br>
+    <button>Submit</button>
+
+    <script>
+
+        let fname = document.getElementById('fname')
+        let lname = document.getElementById('lname')
+        let pwd = document.getElementById('pwd')
+        let dob = document.getElementById('dob')
+
+        let button1 = document.getElementsByTagName('button')[0]
+
+
+        button1.addEventListener('click', validate)
+
+        function validate(){
+            validateNames()
+            validatePwd()
+            validateDOB()
+        }
+
+        // you do not need to use regex all the time
+        function validateNames(){
+            if (fname.value.match(/\d+/g) !== null){
+                alert ('no numbers in first name')
+            }
+            if (lname.value.match(/\d+/g) !== null){
+                alert ('no numbers in last name')
+            }
+        }
+
+        // I will solve the password part without regex 
+        // (this is from one of the solutions that was submitted and this was accepted completely)
+        function validatePwd(){
+            let capitalLetters = ['A','B','C','D','E','F','G','G','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+            let numbers = ['1','2','3','4','5','6','7','8','9','0']
+            let specialCharacters = ['@','!','`','|','*','#','$','%','^','&','_','-','+','=']
+
+            let m1 = matchStringToArray(pwd.value, capitalLetters)
+            let m2 = matchStringToArray(pwd.value, numbers)
+            let m3 = matchStringToArray(pwd.value, specialCharacters)
+
+            if (!(m1 && m2 && m3))
+                alert ("Password should have at least one capital letter, one special character and one number")
+            
+        }
+
+        function matchStringToArray(str,array){
+            for (let i=0; i < array.length; i++){
+                if (str.includes(array[i]))
+                    return true
+            }
+            return false
+        }
+
+
+
+        function validateDOB(){
+            let today = new Date()
+            let dateToday = today.getFullYear()
+            let dobValue = new Date(dob.value).getFullYear()
+            if(dateToday - dobValue < 18)
+                alert("you must be older than 18")
+        }
+
+
+
+
+    </script>
+
+
+</body>
+</html>

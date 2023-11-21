@@ -1,0 +1,51 @@
+<html>
+
+
+
+<head>
+
+    <style>
+
+        /* Change the colour of link "Task 1a" to green and size to 22px when the mouse moves over. */
+         a:first-child:hover {
+            color: green;
+            font-size: 22px;
+        }
+
+        /* Change the background of first italics text in each paragraph to yellow */
+        div i:first-of-type{
+            background-color: yellow;
+        }
+
+        /* Add a "smiley.gif" before each link */
+        a::before{
+            content: url("smiley.gif")
+        }
+
+        /* Change the background color of link with a php extension to yellow */
+        a[href$=".php"]{
+            background-color: aquamarine;
+        }
+
+        /* Add a 1px border to all the active links in the page */
+        a:active{
+            border: 1px solid black;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+    <div>
+        <a href="css_syntax.html">Task 1a</a> <br>
+        I am your second task <i>be careful</i> with the <i>CSS</i>
+    </div>
+
+    <div>
+        I am your second task <i>be careful</i> with the <i>dummy link below</i>
+        <a href="css_syntax.php"> Task 1b</a> 
+    </div>
+</body>
+</html>
